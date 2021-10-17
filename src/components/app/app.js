@@ -7,8 +7,27 @@ import AppFilter from "../app-filter/app-filter";
 import MainBlock from "../main-block/main-block";
 import WorkersList from "../workers-list/workers-list";
 import WorkersAddForm from "../workers-add-form/workers-add-form";
+// import Server from "../../services/server";
 
 export default class App extends Component {
+	workersList = [
+		{
+			name: "Nike",
+			salary: 1000,
+			increase: false,
+		},
+		{
+			name: "Sam",
+			salary: 3000,
+			increase: true,
+		},
+		{
+			name: "Alex",
+			salary: 5800,
+			increase: false,
+		},
+	];
+
 	render() {
 		return (
 			<div className="app">
@@ -19,7 +38,7 @@ export default class App extends Component {
 					<AppFilter />
 				</MainBlock>
 
-				<WorkersList />
+				<WorkersList workersList={this.workersList} />
 
 				<WorkersAddForm />
 			</div>

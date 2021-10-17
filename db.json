@@ -1,0 +1,16 @@
+{
+	"workers-list": [
+		{
+			"name": "Nike",
+			"salary": 1000
+		},
+		{
+			"name": "Sam",
+			"salary": 3000
+		},
+		{
+			"name": "Alex",
+			"salary": 5800
+		}
+	]
+}
