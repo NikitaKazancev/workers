@@ -2,15 +2,24 @@
 	"workers-list": [
 		{
 			"name": "Nike",
-			"salary": 1000
+			"salary": 1000,
+			"increase": false,
+			"like": false,
+			"id": 1
 		},
 		{
 			"name": "Sam",
-			"salary": 3000
+			"salary": 3000,
+			"increase": true,
+			"like": false,
+			"id": 2
 		},
 		{
 			"name": "Alex",
-			"salary": 5800
+			"salary": 5800,
+			"increase": false,
+			"like": false,
+			"id": 3
 		}
 	]
 }

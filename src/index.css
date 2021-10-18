@@ -12,6 +12,13 @@ code {
 		monospace;
 }
 
+.main-block {
+	background-color: #3d5a80;
+	border-radius: 10px;
+	box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15);
+	color: white;
+}
+
 .mt-25 {
 	margin-top: 25px;
 }
