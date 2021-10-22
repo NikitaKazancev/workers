@@ -7,3 +7,17 @@
 	margin-right: 20px;
 	/* flex-direction: column; */
 }
+
+.form-control.new-post-label {
+	transition: 0.5s all;
+}
+
+.not-valid {
+	border: 1px solid rgb(202, 91, 91);
+	box-shadow: inset 0 0 4px rgba(202, 91, 91);
+}
+
+.valid {
+	border: 1px solid rgb(91, 202, 119);
+	box-shadow: inset 0 0 4px rgb(91, 202, 119);
+}

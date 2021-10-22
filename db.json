@@ -18,7 +18,7 @@
 			"name": "Alex",
 			"salary": 5800,
 			"increase": false,
-			"like": false,
+			"like": true,
 			"id": 3
 		}
 	]

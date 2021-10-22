@@ -31,7 +31,7 @@ export default class Server {
 	}
 
 	catchError(res) {
-		if (res.statusText === "OK") return res.data;
+		if (res.status < 400) return res.data;
 
 		const e = new Error(`Failed to get ${this.baseUrl + this.url}`);
 		e.data = res;

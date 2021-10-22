@@ -1,3 +1,4 @@
-const arr = [1, 2, 3];
-console.log(arr.filter((i) => i > 2));
-console.log(arr);
+const str = "NIKE";
+console.log(~str.indexOf("N"));
+
+document.createElement("btn").ch;
