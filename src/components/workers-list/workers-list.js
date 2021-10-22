@@ -6,7 +6,7 @@ import Loading from "../loading/loading";
 
 class WorkersList extends Component {
 	render() {
-		const { workersList, onItemHandler, onDelete } = this.props;
+		const { workersList, onItemHandler, onDelete, onItemSalary } = this.props;
 
 		let content = <Loading />;
 		if (workersList) {
@@ -17,10 +17,11 @@ class WorkersList extends Component {
 						<WorkersListItem
 							{...{
 								...otherProps,
-								onLikeHandler: () => onItemHandler(id, "like"),
-								onIncreaseHandler: () => onItemHandler(id, "increase"),
-								onDelete: () => onDelete(id),
+								onItemHandler,
+								onItemSalary,
+								onDelete,
 								key: id,
+								id,
 							}}
 						/>
 					);

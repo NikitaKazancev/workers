@@ -8,9 +8,10 @@ class WorkersListItem extends Component {
 			salary,
 			increase,
 			like,
-			onLikeHandler,
-			onIncreaseHandler,
 			onDelete,
+			onItemHandler,
+			onItemSalary,
+			id,
 		} = this.props;
 
 		let liClasses = "list-group-item d-flex justify-content-between";
@@ -19,19 +20,23 @@ class WorkersListItem extends Component {
 
 		return (
 			<li className={liClasses}>
-				<span className="list-group-item-label" onClick={onLikeHandler}>
+				<span
+					className="list-group-item-label"
+					onClick={() => onItemHandler(id, "like")}
+				>
 					{name}
 				</span>
 				<input
 					type="text"
 					className="list-group-item-input"
 					defaultValue={`$ ${salary}`}
+					onInput={({ target }) => onItemSalary(target.value.slice(2), id)}
 				/>
 				<div className="d-flex justify-content-center align-item-center">
 					<button
 						type="button"
 						className="btn-cookie btn-sm"
-						onClick={onIncreaseHandler}
+						onClick={() => onItemHandler(id, "increase")}
 					>
 						<i className="fas fa-cookie"></i>
 					</button>
@@ -39,7 +44,7 @@ class WorkersListItem extends Component {
 					<button
 						type="button"
 						className="btn-trash btn-sm"
-						onClick={onDelete}
+						onClick={() => onDelete(id)}
 					>
 						<i className="fas fa-trash"></i>
 					</button>

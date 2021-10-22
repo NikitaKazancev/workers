@@ -26,6 +26,12 @@ export default class App extends Component {
 			.catch((err) => console.error(err, err.data));
 	};
 
+	getPerson = (id) => {
+		for (const person of this.state.workersList) {
+			if (person.id === id) return { ...person };
+		}
+	};
+
 	onItemHandler = (id, prop) => {
 		this.setState(({ workersList }) => ({
 			workersList: workersList.map((item) => {
@@ -34,10 +40,23 @@ export default class App extends Component {
 			}),
 		}));
 
-		const person = {
-			...this.state.workersList.filter((item) => id === item.id)[0],
-		};
+		const person = this.getPerson(id);
 		person[prop] = !person[prop];
+		this.server.put(id, person);
+	};
+
+	onItemSalary = (salary, id) => {
+		this.setState({
+			workersList: this.state.workersList.map((item) => {
+				if (item.id === id) {
+					item.salary = salary;
+				}
+				return { ...item };
+			}),
+		});
+
+		const person = this.getPerson(id);
+		person.salary = salary;
 		this.server.put(id, person);
 	};
 
@@ -114,6 +133,7 @@ export default class App extends Component {
 						workersList: visibleList,
 						onItemHandler: this.onItemHandler,
 						onDelete: this.onDelete,
+						onItemSalary: this.onItemSalary,
 					}}
 				/>
 
