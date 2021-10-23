@@ -1,5 +1,8 @@
 import { Component } from "react";
-import "./workers-add-form.css";
+import "./workers-add-form.scss";
+
+import { MainBlockIndentS } from "../../general-styles/main-block-s";
+import { AddFormS } from "./workers-add-form-s";
 
 class WorkersAddForm extends Component {
 	state = {
@@ -60,9 +63,14 @@ class WorkersAddForm extends Component {
 		const { name, salary } = this.state;
 
 		return (
-			<div className="main-block mt-30 p-25">
+			<MainBlockIndentS mt="30px" p="25px">
 				<h3>Добавьте нового сотрудника</h3>
-				<form className="add-form d-flex" onSubmit={this.onSubmit}>
+				<AddFormS
+					as="form"
+					mt="20px"
+					className="d-flex"
+					onSubmit={this.onSubmit}
+				>
 					<input
 						type="text"
 						className="form-control new-post-label"
@@ -82,8 +90,8 @@ class WorkersAddForm extends Component {
 					<button type="submit" className="btn btn-outline-light">
 						Добавить
 					</button>
-				</form>
-			</div>
+				</AddFormS>
+			</MainBlockIndentS>
 		);
 	}
 }

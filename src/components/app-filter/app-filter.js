@@ -1,5 +1,6 @@
 import { Component } from "react";
-import "./app-filter.css";
+
+import IndentS from "../../general-styles/indent-s";
 
 import FilterBtn from "./filter-btn/filter-btn";
 
@@ -39,7 +40,8 @@ class AppFilter extends Component {
 		});
 
 		return (
-			<div
+			<IndentS
+				mt="25px"
 				className="btn-group"
 				onClick={(e) =>
 					onFilter(
@@ -49,7 +51,7 @@ class AppFilter extends Component {
 				}
 			>
 				{buttons}
-			</div>
+			</IndentS>
 		);
 	}
 }

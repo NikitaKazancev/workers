@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "./workers-list.css";
+import "./workers-list.scss";
 
 import WorkersListItem from "./workers-list-item/workers-list-item";
 import Loading from "../loading/loading";

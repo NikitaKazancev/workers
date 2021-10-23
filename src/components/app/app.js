@@ -1,6 +1,8 @@
-import "./app.css";
 import { Component } from "react";
 import Server from "../../services/server";
+
+import AppS from "./app-s";
+import { MainBlockIndentS } from "../../general-styles/main-block-s";
 
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
@@ -117,16 +119,16 @@ export default class App extends Component {
 		);
 
 		return (
-			<div className="app">
+			<AppS>
 				<AppInfo {...{ amount, increased }} />
 
-				<div className="main-block mt-25 p-25">
+				<MainBlockIndentS mt="25px" p="25px">
 					<SearchPanel value={search} onSearch={this.onSearchHandler} />
 					<AppFilter
 						onFilter={this.onFilterHandler}
 						filter={filter.text}
 					/>
-				</div>
+				</MainBlockIndentS>
 
 				<WorkersList
 					{...{
@@ -138,7 +140,7 @@ export default class App extends Component {
 				/>
 
 				<WorkersAddForm {...{ onAdd: this.onAdd }} />
-			</div>
+			</AppS>
 		);
 	}
 }

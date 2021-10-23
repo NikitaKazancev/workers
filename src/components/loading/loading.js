@@ -1,4 +1,4 @@
-import "./loading.css";
+import "./loading.scss";
 
 const Loading = () => (
 	<div className="loading__wrapper">

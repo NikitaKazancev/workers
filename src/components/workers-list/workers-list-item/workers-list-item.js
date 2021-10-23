@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "./workers-list-item.css";
+import "./workers-list-item.scss";
 
 class WorkersListItem extends Component {
 	render() {
